@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name='mobile-optimized' content='width'/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="History Archive — MD. Solyman Hossain. Academic history research on Bangladesh, Asia, Europe and Russia."/>
+<title>History Archive | MD. Solyman Hossain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0a0905;color:#e8dfc5;font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.75;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{cursor:pointer;font-family:inherit}
+
+/* ── TOKENS ── */
+:root{
+  --bg0:#0a0905; --bg1:#110f08; --bg2:#16130c; --bg3:#1e1a10;
+  --bdr:#2e2718; --bdr2:#6b5a2a;
+  --gold:#c9a84c; --gold-l:#e8c97a; --gold-d:#8a6a1e;
+  --cream:#f0e6c8; --cream2:#b5a880;
+  --txt:#e8dfc5; --txt2:#9e9070; --txt3:#5c5440;
+  --red:#8b2020;
+  --ff-display:'Playfair Display',serif;
+  --ff-body:'Cormorant Garamond',serif;
+  --ff-ui:'Crimson Pro',serif;
+  --ff-fell:'IM Fell English',serif;
+  --ease:.35s cubic-bezier(.4,0,.2,1);
+  --shadow:0 20px 60px rgba(0,0,0,.8);
+  --glow:0 0 40px rgba(201,168,76,.08);
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg0)}
+::-webkit-scrollbar-thumb{background:var(--gold-d);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+
+/* ── LAYOUT ── */
+.wrap{width:92%;max-width:1200px;margin-inline:auto}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--bg0);border-bottom:1px solid var(--bdr);padding:7px 0;text-align:center;font-family:var(--ff-ui);font-size:11px;letter-spacing:3px;color:var(--gold-d);text-transform:uppercase}
+
+/* ── HEADER ── */
+#hdr{position:sticky;top:0;z-index:900;background:var(--bg1);border-bottom:1px solid var(--bdr);box-shadow:0 4px 30px rgba(0,0,0,.5)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand-title{font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:var(--cream);text-shadow:0 2px 20px rgba(201,168,76,.3);line-height:1}
+.brand-title span{color:var(--gold);font-style:italic}
+.brand-sub{font-family:var(--ff-fell);font-style:italic;color:var(--gold-d);font-size:.72rem;letter-spacing:2px;margin-top:4px;opacity:.8}
+
+/* ── NAV ── */
+nav ul{display:flex;align-items:center;gap:0}
+nav ul li{position:relative}
+.nav-a,.nav-btn{display:flex;align-items:center;gap:5px;color:var(--cream2);font-family:var(--ff-ui);font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:10px 14px;border:none;background:transparent;border-bottom:2px solid transparent;transition:color var(--ease),border-color var(--ease);white-space:nowrap}
+.nav-a:hover,.nav-btn:hover,.nav-a.active{color:var(--gold);border-bottom-color:var(--gold)}
+.chevron{display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid var(--gold-d);margin-left:2px;transition:transform .25s ease}
+.dropdown{position:absolute;top:calc(100% + 2px);left:0;background:var(--bg2);border:1px solid var(--bdr);border-top:2px solid var(--gold);min-width:190px;padding:6px 0;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .22s,transform .22s;z-index:999;box-shadow:var(--shadow)}
+.has-dd.open .dropdown{opacity:1;pointer-events:auto;transform:translateY(0)}
+.has-dd.open .chevron{transform:rotate(180deg)}
+.dropdown a{display:block;padding:10px 18px;font-family:var(--ff-ui);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream2);border-bottom:1px solid var(--bdr);transition:all .2s}
+.dropdown a:last-child{border-bottom:none}
+.dropdown a:hover{color:var(--gold);background:var(--bg3);padding-left:26px}
+.mob-toggle{display:none;background:transparent;border:none;color:var(--cream);flex-direction:column;gap:5px;padding:6px}
+.mob-toggle span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:transform .3s,opacity .3s}
+.mob-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mob-toggle.open span:nth-child(2){opacity:0}
+.mob-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;background:var(--bg2);border-top:1px solid var(--bdr);padding:8px 0 16px}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;padding:9px 24px;color:var(--cream2);font-family:var(--ff-ui);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;border-left:2px solid transparent;transition:.2s}
+.mob-nav a:hover{background:var(--bg3);border-left-color:var(--gold);color:var(--gold)}
+.mob-group{padding:10px 24px 3px;font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--txt3)}
+#theme-btn{font-size:.75rem!important;letter-spacing:1px!important}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 24px;font-family:var(--ff-ui);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:1px solid transparent;transition:all var(--ease);line-height:1}
+.btn-gold{background:var(--gold);color:var(--bg0);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-l);box-shadow:0 0 24px rgba(201,168,76,.35);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--cream);border-color:var(--bdr2)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--gold);border:1px solid var(--bdr);font-size:.76rem;padding:7px 16px}
+.btn-ghost:hover{background:var(--gold);color:var(--bg0);border-color:var(--gold);transform:translateY(-1px)}
+.btn-sm{padding:7px 16px;font-size:.72rem}
+
+/* ── SECTION SHARED ── */
+section{padding:64px 0;position:relative;z-index:1}
+.sec-label{display:inline-block;font-family:var(--ff-ui);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.sec-title{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--cream);line-height:1.2;margin-bottom:10px;font-weight:700}
+.sec-bar{display:block;width:44px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:0 auto 10px}
+.sec-rule{display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:10px}
+.sec-rule::before,.sec-rule::after{content:'';flex:1;height:1px;background:var(--bdr);max-width:100px}
+.sec-intro{font-size:.95rem;color:var(--txt2);max-width:600px;margin-inline:auto;font-style:italic}
+.sec-hd{text-align:center;margin-bottom:44px}
+.view-all{text-align:center;margin-top:32px}
+
+/* BG alternating */
+#home{background:linear-gradient(160deg,rgba(10,9,5,.97),rgba(17,15,8,.88),rgba(26,15,5,.95));border-bottom:1px solid var(--bdr)}
+#featured-section,#asia-history,#russia-history,#research{background:var(--bg1)}
+#news-feed,#bangladesh-history,#europe-history,#about{background:var(--bg0)}
+#news-feed,#research{border-top:1px solid var(--bdr)}
+
+/* ── HERO ── */
+#home{padding:72px 0 60px;overflow:hidden}
+#home::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,.015) 60px,rgba(201,168,76,.015) 61px);pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 280px;gap:44px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-ui);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:14px}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold-d)}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.1;margin-bottom:16px;font-weight:900;color:var(--cream);text-shadow:0 2px 20px rgba(201,168,76,.2)}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1rem;color:var(--txt2);max-width:500px;margin-bottom:28px;font-style:italic;line-height:1.75}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ── AUTHOR CARD ── */
+.author-card{background:rgba(201,168,76,.05);border:1px solid var(--bdr2);border-radius:4px;padding:26px 22px;text-align:center}
+.av-wrap{position:relative;width:100px;height:100px;margin:0 auto 14px;cursor:pointer}
+.av-wrap img,.av-ph{width:100px;height:100px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-d)}
+.av-ph{background:linear-gradient(135deg,var(--bg3),var(--bg1));display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:var(--txt3)}
+.av-overlay{position:absolute;inset:0;border-radius:50%;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.25s;font-size:.66rem;color:var(--gold);letter-spacing:.04em;text-align:center;padding:8px;font-family:var(--ff-ui)}
+.av-wrap:hover .av-overlay{opacity:1}
+#av-input{display:none}
+.av-name{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--cream);margin-bottom:3px}
+.av-role{font-family:var(--ff-ui);font-size:.68rem;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.av-tags{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+.av-tag{background:rgba(201,168,76,.08);border:1px solid var(--bdr);color:var(--cream2);font-family:var(--ff-ui);font-size:.66rem;padding:3px 10px;letter-spacing:.04em}
+
+/* ── FEATURED SLIDER ── */
+#featured-section{padding:52px 0}
+.slider-wrap{position:relative;overflow:hidden;border:1px solid var(--bdr)}
+.slider-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.slide{min-width:100%;display:grid;grid-template-columns:1fr 2fr;height:120px;flex-shrink:0}
+.slide-img{position:relative;overflow:hidden;background:var(--bg2)}
+.slide-img img{width:100%;height:100%;object-fit:cover;opacity:.75;transition:transform .5s}
+.slide-img-ph{width:100%;height:100%;background:linear-gradient(135deg,var(--bg1),var(--bg3));display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--bdr)}
+.slide-badge{position:absolute;top:8px;left:0;background:var(--gold);color:var(--bg0);font-family:var(--ff-ui);font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px}
+.slide-body{background:var(--bg2);padding:12px 16px;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--bdr);overflow:hidden}
+.slide-meta{font-family:var(--ff-ui);font-size:.62rem;color:var(--txt3);font-style:italic;margin-bottom:4px}
+.slide-title{font-family:var(--ff-display);font-size:.95rem;font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.slide-excerpt{font-family:var(--ff-body);font-size:.78rem;color:var(--txt2);line-height:1.5;flex:1;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.slide-footer{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.slide-author{font-family:var(--ff-ui);font-size:.64rem;color:var(--txt3);font-style:italic}
+.slider-dots{display:flex;gap:7px;justify-content:center;margin-top:14px}
+.sdot{width:8px;height:8px;border-radius:50%;background:var(--bdr);border:none;padding:0;transition:.25s}
+.sdot.on{background:var(--gold);transform:scale(1.2)}
+.sarrow{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(201,168,76,.15);border:1px solid var(--bdr2);color:var(--gold);font-size:.9rem;display:grid;place-items:center;transition:.25s;z-index:5}
+.sarrow:hover{background:var(--gold);color:var(--bg0)}
+#sarr-prev{left:10px}
+#sarr-next{right:10px}
+.slider-ph{min-width:100%;min-height:300px;display:flex;align-items:center;justify-content:center;background:var(--bg2);color:var(--txt3);font-family:var(--ff-ui);font-size:.85rem;letter-spacing:.1em}
+
+/* ── CARDS ── */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.card{background:var(--bg2);border:1px solid var(--bdr);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:var(--glow);border-color:var(--gold-d)}
+.card-img{position:relative;overflow:hidden;height:180px;background:var(--bg1)}
+.card-img img{width:100%;height:100%;object-fit:cover;opacity:.75;transition:transform .4s,opacity .3s}
+.card:hover .card-img img{transform:scale(1.05);opacity:.88}
+.card-img-ph{width:100%;height:100%;background:linear-gradient(135deg,var(--bg1),var(--bg3));display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:var(--bdr)}
+.card-cat{position:absolute;top:10px;left:0;background:var(--gold);color:var(--bg0);font-family:var(--ff-ui);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px}
+.card-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.card-meta{display:flex;gap:12px;font-family:var(--ff-ui);font-size:.7rem;color:var(--txt3);margin-bottom:9px;font-style:italic}
+.card-title{font-family:var(--ff-display);font-size:1rem;line-height:1.3;color:var(--cream);margin-bottom:9px;font-weight:700}
+.card-desc{font-family:var(--ff-body);font-size:.85rem;color:var(--txt2);line-height:1.65;flex:1;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.cards-loading{grid-column:1/-1;padding:30px;text-align:center;color:var(--txt3);font-family:var(--ff-ui);font-size:.85rem;letter-spacing:.08em}
+
+/* ── NEWS FEED ── */
+.nf-grid{display:grid;grid-template-columns:2fr 1fr;gap:36px}
+.nf-lead{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:26px;padding-bottom:26px;border-bottom:1px solid var(--bdr)}
+.nf-lead-img{overflow:hidden}
+.nf-lead-img img{width:100%;height:240px;object-fit:cover;opacity:.8}
+.nf-lead-img-ph{width:100%;height:240px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--bdr)}
+.nf-cat{font-family:var(--ff-ui);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+.nf-lead-title{font-family:var(--ff-display);font-size:1.4rem;font-weight:700;color:var(--cream);line-height:1.25;margin-bottom:9px}
+.nf-excerpt{font-family:var(--ff-body);font-size:.88rem;color:var(--txt2);line-height:1.7;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.nf-byline{font-family:var(--ff-ui);font-size:.72rem;color:var(--txt3);font-style:italic}
+.nf-item{display:grid;grid-template-columns:80px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--bdr);transition:.2s;text-decoration:none;color:inherit}
+.nf-item:last-of-type{border-bottom:none}
+.nf-item:hover{background:var(--bg3);padding-left:6px}
+.nf-thumb{width:80px;height:68px;overflow:hidden;flex-shrink:0}
+.nf-thumb img{width:100%;height:100%;object-fit:cover}
+.nf-thumb-ph{width:100%;height:100%;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--bdr)}
+.nf-item-cat{font-family:var(--ff-ui);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.nf-item-title{font-family:var(--ff-display);font-size:.88rem;color:var(--cream);line-height:1.3;margin-bottom:4px;font-weight:700}
+.nf-item-date{font-family:var(--ff-ui);font-size:.62rem;color:var(--txt3);font-style:italic}
+.nf-pagination{display:flex;gap:12px;margin-top:22px;justify-content:center}
+.nf-loading{padding:40px;text-align:center;color:var(--txt3);font-family:var(--ff-ui);font-size:.85rem;letter-spacing:.08em}
+
+/* ── SIDEBAR ── */
+.sidebar{display:flex;flex-direction:column;gap:24px}
+.widget{background:var(--bg2);border:1px solid var(--bdr);padding:20px}
+.widget-title{font-family:var(--ff-ui);font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--bdr)}
+.w-item{padding:10px 0;border-bottom:1px solid var(--bdr);cursor:pointer;transition:.2s;text-decoration:none;display:block;color:inherit}
+.w-item:last-child{border-bottom:none}
+.w-item:hover{padding-left:6px}
+.w-cat{font-family:var(--ff-ui);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.w-title{font-family:var(--ff-display);font-size:.84rem;color:var(--cream);line-height:1.3;font-weight:700;margin-bottom:3px}
+.w-date{font-family:var(--ff-ui);font-size:.62rem;color:var(--txt3);font-style:italic}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:5px}
+.tag{background:var(--bg3);border:1px solid var(--bdr);color:var(--cream2);font-family:var(--ff-ui);font-size:.62rem;padding:3px 9px;letter-spacing:.04em;cursor:pointer;transition:.2s}
+.tag:hover{background:var(--gold);color:var(--bg0);border-color:var(--gold)}
+
+/* ── RESEARCH ── */
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.res-col-hd{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.res-col-icon{font-size:1.6rem}
+.res-col-title{font-family:var(--ff-display);font-size:1.15rem;color:var(--cream);font-weight:700}
+.doc-card{background:var(--bg2);border:1px solid var(--bdr);padding:18px;margin-bottom:14px;transition:.2s}
+.doc-card:hover{border-color:var(--gold-d)}
+.doc-hd{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
+.doc-badge{background:var(--gold-d);color:var(--bg0);font-family:var(--ff-ui);font-size:.62rem;font-weight:700;letter-spacing:.08em;padding:4px 7px;flex-shrink:0;margin-top:2px}
+.doc-title{font-family:var(--ff-display);font-size:.92rem;color:var(--cream);line-height:1.3;font-weight:700;margin-bottom:4px}
+.doc-date{font-family:var(--ff-ui);font-size:.65rem;color:var(--txt3);font-style:italic}
+.doc-text{font-family:var(--ff-body);font-size:.85rem;color:var(--txt2);line-height:1.65}
+.quote-card{background:var(--bg2);border-left:2px solid var(--gold-d);padding:18px 20px;margin-bottom:14px}
+.quote-text{font-family:var(--ff-body);font-size:.92rem;color:var(--cream2);font-style:italic;line-height:1.75;margin-bottom:14px}
+.quote-by{display:flex;align-items:center;gap:10px}
+.quote-ico{font-size:1.3rem}
+.quote-name{font-family:var(--ff-display);font-size:.82rem;color:var(--cream);font-weight:700}
+.quote-role{font-family:var(--ff-ui);font-size:.66rem;color:var(--txt3);margin-top:2px;font-style:italic}
+.archive-note{background:var(--bg2);border:1px solid var(--bdr);padding:14px 18px;font-family:var(--ff-ui);font-size:.78rem;color:var(--txt2);line-height:1.65;margin-top:24px}
+.archive-note strong{color:var(--cream)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-text p{font-family:var(--ff-body);color:var(--txt2);line-height:1.8;margin-bottom:16px}
+.about-feat{margin:22px 0}
+.about-feat-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.about-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:8px}
+.about-feat-txt{font-family:var(--ff-body);font-size:.9rem;color:var(--txt2);line-height:1.6}
+.info-card{background:var(--bg2);border:1px solid var(--bdr);padding:20px;margin-bottom:14px;transition:.2s}
+.info-card:hover{border-color:var(--gold-d)}
+.info-card h4{font-family:var(--ff-display);font-size:.95rem;color:var(--cream);margin-bottom:8px;font-weight:700}
+.info-card p{font-family:var(--ff-body);font-size:.85rem;color:var(--txt2);line-height:1.65}
+/* About photo */
+.abt-photo-wrap{text-align:center;margin-bottom:24px}
+.abt-av{position:relative;width:130px;height:130px;margin:0 auto 10px;cursor:pointer}
+.abt-av img,.abt-av-ph{width:130px;height:130px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-d)}
+.abt-av-ph{background:linear-gradient(135deg,var(--bg3),var(--bg1));display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:var(--txt3)}
+.abt-av-ov{position:absolute;inset:0;border-radius:50%;background:rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:.25s;font-family:var(--ff-ui);font-size:.62rem;color:var(--gold);letter-spacing:.04em;text-align:center;padding:8px}
+.abt-av-ov span{font-size:1.4rem;margin-bottom:4px}
+.abt-av:hover .abt-av-ov{opacity:1}
+.upload-hint{font-family:var(--ff-ui);font-size:.65rem;color:var(--txt3);letter-spacing:.04em}
+#abt-photo-input{display:none}
+
+/* ── FOOTER ── */
+#footer{background:var(--bg0);border-top:1px solid var(--bdr);padding:48px 0 0;z-index:1;position:relative}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.footer-col h4{font-family:var(--ff-display);font-size:.9rem;color:var(--cream);font-weight:700;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--bdr)}
+.footer-col p{font-family:var(--ff-body);font-size:.85rem;color:var(--txt2);line-height:1.7;margin-bottom:12px}
+.footer-links li{margin-bottom:6px}
+.footer-links a{font-family:var(--ff-ui);font-size:.78rem;color:var(--txt3);letter-spacing:.5px;transition:.2s}
+.footer-links a:hover{color:var(--gold);padding-left:4px}
+.footer-contact p{font-family:var(--ff-ui);font-size:.78rem;color:var(--txt3);margin-bottom:8px;line-height:1.6}
+.footer-contact a{color:var(--gold-d)}
+.footer-contact a:hover{color:var(--gold)}
+.socials{display:flex;gap:8px;margin-top:12px}
+.social-a{background:var(--bg2);border:1px solid var(--bdr);color:var(--cream2);font-family:var(--ff-ui);font-size:.68rem;font-weight:700;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:.2s}
+.social-a:hover{background:var(--gold);color:var(--bg0);border-color:var(--gold)}
+.footer-btm{border-top:1px solid var(--bdr);padding:16px 0;text-align:center;font-family:var(--ff-ui);font-size:.7rem;color:var(--txt3);letter-spacing:.04em}
+.footer-btm a{color:var(--gold-d)}
+.footer-btm a:hover{color:var(--gold)}
+
+/* ── BACK TO TOP + TOAST ── */
+#btt{position:fixed;bottom:24px;right:24px;background:var(--gold-d);border:1px solid var(--gold);color:var(--cream);width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:.9rem;opacity:0;pointer-events:none;transition:.3s;z-index:800}
+#btt.on{opacity:1;pointer-events:auto}
+#btt:hover{background:var(--gold);color:var(--bg0)}
+.toast{position:fixed;bottom:70px;right:24px;background:var(--bg2);border:1px solid var(--gold-d);color:var(--cream);font-family:var(--ff-ui);font-size:.78rem;letter-spacing:.06em;padding:10px 18px;z-index:800;opacity:0;transform:translateY(8px);transition:.3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+
+/* ── ARTICLE MODAL ── */
+#modal{display:none;position:fixed;inset:0;z-index:9999;overflow-y:auto;background:rgba(0,0,0,.85);backdrop-filter:blur(4px);padding:40px 20px}
+#modal.open{display:block}
+.modal-paper{background:var(--bg1);max-width:820px;margin:0 auto;border:1px solid var(--bdr2);box-shadow:0 30px 80px rgba(0,0,0,.8)}
+.modal-hdr{background:var(--bg0);border-bottom:1px solid var(--bdr);padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+.modal-hdr-lbl{font-family:var(--ff-ui);font-size:.8rem;color:var(--gold-d);letter-spacing:.1em;text-transform:uppercase}
+.modal-close{background:transparent;border:1px solid var(--bdr);color:var(--cream2);width:32px;height:32px;display:grid;place-items:center;font-size:1rem;transition:.2s}
+.modal-close:hover{background:var(--red);border-color:var(--red);color:#fff}
+.paper-mast{text-align:center;padding:28px 36px 18px;border-bottom:2px double var(--bdr2)}
+.paper-mast-date{font-family:var(--ff-ui);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt3);margin-bottom:6px}
+.paper-mast-name{font-family:var(--ff-display);font-size:2rem;font-weight:900;color:var(--cream);text-shadow:0 2px 12px rgba(201,168,76,.2);line-height:1}
+.paper-mast-tag{font-family:var(--ff-fell);font-size:.75rem;font-style:italic;color:var(--gold-d);margin-top:5px}
+.paper-rule{border:none;border-top:1px solid var(--bdr);margin:0 36px}
+.paper-head{padding:30px 44px 20px}
+.paper-cat-badge{display:inline-block;background:var(--gold);color:var(--bg0);font-family:var(--ff-ui);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 12px;margin-bottom:12px}
+.paper-title{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:14px}
+.paper-byline{font-family:var(--ff-ui);font-size:.76rem;color:var(--txt3);font-style:italic;padding-bottom:14px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.paper-img{width:calc(100% - 88px);margin:24px 44px 6px;overflow:hidden;max-height:340px}
+.paper-img img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.paper-caption{text-align:center;font-family:var(--ff-ui);font-size:.68rem;font-style:italic;color:var(--txt3);margin:0 44px 24px}
+.paper-body{padding:0 44px 44px;columns:2;column-gap:32px;column-rule:1px solid var(--bdr);font-family:var(--ff-body);font-size:1rem;line-height:1.85;color:var(--txt)}
+.paper-body p{margin-bottom:1.15em;break-inside:avoid}
+.paper-body h3{font-family:var(--ff-display);font-size:1.1rem;color:var(--gold);margin:1.5em 0 .65em;column-span:all;border-bottom:1px solid var(--bdr);padding-bottom:5px}
+.paper-body blockquote{border-left:2px solid var(--gold-d);padding:9px 14px;margin:1.1em 0;background:var(--bg3);font-style:italic;color:var(--cream2);break-inside:avoid}
+.paper-body img{max-width:100%;height:auto;margin:1em 0;column-span:all}
+.paper-foot{padding:18px 44px 32px;background:var(--bg0);border-top:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.paper-tags{display:flex;flex-wrap:wrap;gap:5px}
+.paper-tag{background:var(--bg3);border:1px solid var(--bdr);color:var(--cream2);font-family:var(--ff-ui);font-size:.66rem;padding:3px 9px;letter-spacing:.04em}
+.paper-back-btn{background:var(--gold-d);color:var(--cream);border:none;padding:7px 16px;font-size:.74rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-family:var(--ff-ui);transition:.2s}
+.paper-back-btn:hover{background:var(--gold)}
+@media(max-width:640px){
+  .paper-body{columns:1}
+  .paper-head,.paper-body,.paper-foot,.paper-img,.paper-caption{padding-left:20px;padding-right:20px}
+  .paper-img{width:calc(100% - 40px);margin-left:20px;margin-right:20px}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .author-card{display:none}
+  .slide{grid-template-columns:1fr;height:auto}
+  .slide-img{height:100px}
+  .slide-img img{height:100px}
+  .nf-grid{grid-template-columns:1fr}
+  .res-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .cards-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .nf-lead{grid-template-columns:1fr}
+  .mob-toggle{display:flex}
+  nav ul,nav .nav-right{display:none}
+  .slide{height:auto}
+  .slide-body{padding:10px 12px}
+  .slide-title{font-size:.85rem}
+  .slide-excerpt{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">✦ Chronicles of Human Civilization ✦</div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="wrap">
+    <div class="hdr-inner">
+      <div>
+        <div class="brand-title">History <span>Archive</span></div>
+        <div class="brand-sub">MD. Solyman Hossain — A Digital Record of the Past</div>
+      </div>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#home" class="nav-a">Home</a></li>
+          <li class="has-dd">
+            <button class="nav-btn">History <span class="chevron"></span></button>
+            <div class="dropdown">
+              <a href="#bangladesh-history">Bangladesh</a>
+              <a href="#asia-history">Asia</a>
+              <a href="#europe-history">Europe</a>
+              <a href="#russia-history">Russia</a>
+            </div>
+          </li>
+          <li><a href="#featured-section" class="nav-a">Featured</a></li>
+          <li><a href="#news-feed" class="nav-a">News Feed</a></li>
+          <li><a href="#research" class="nav-a">Research</a></li>
+          <li><a href="#about" class="nav-a">About</a></li>
+          <li><button class="nav-btn" id="theme-btn">◑ Dark</button></li>
+        </ul>
+      </nav>
+      <button class="mob-toggle" id="mob-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mob-nav" id="mob-nav">
+    <div class="mob-group">Main</div>
+    <a href="#home">Home</a>
+    <a href="#featured-section">Featured Articles</a>
+    <a href="#news-feed">News Feed</a>
+    <a href="#research">Research</a>
+    <a href="#about">About</a>
+    <div class="mob-group">Regions</div>
+    <a href="#bangladesh-history">Bangladesh</a>
+    <a href="#asia-history">Asia</a>
+    <a href="#europe-history">Europe</a>
+    <a href="#russia-history">Russia</a>
+    <div class="mob-group">Settings</div>
+    <a href="#" id="mob-theme-btn" onclick="mobToggleTheme(event)">◑ Switch to Light Mode</a>
+  </div>
+</header>
+
+
+<!-- HOME / HERO -->
+<section id="home">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Historical Scholarship</div>
+        <h1 class="hero-h1">Where the Past<br>Speaks to the <em>Present</em></h1>
+        <p class="hero-sub">An independent archive of rigorous historical research — from the Language Movement to Liberation, from Revolution to Empire.</p>
+        <div class="hero-btns">
+          <a href="#featured-section" class="btn btn-gold">Explore Articles →</a>
+          <a href="#about" class="btn btn-outline">About the Author</a>
+        </div>
+      </div>
+      <div class="author-card">
+        <div class="av-wrap" onclick="document.getElementById('av-input').click()">
+          <div class="av-ph" id="av-ph">👤</div>
+          <img id="av-img" src="" alt="Author" style="display:none">
+          <div class="av-overlay">Upload<br>Photo</div>
+        </div>
+        <input type="file" id="av-input" accept="image/*">
+        <div class="av-name">MD. Solyman Hossain</div>
+        <div class="av-role">Historian · Researcher</div>
+        <div class="av-tags">
+          <span class="av-tag">Bangladesh</span>
+          <span class="av-tag">South Asia</span>
+          <span class="av-tag">Liberation War</span>
+          <span class="av-tag">Modern History</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FEATURED SLIDER -->
+<section id="featured-section">
+  <div class="wrap">
+    <div class="sec-hd" style="margin-bottom:28px">
+      <span class="sec-label">Featured</span>
+      <div class="sec-rule"><h2 class="sec-title">Featured Articles</h2></div>
+      <span class="sec-bar"></span>
+    </div>
+    <div class="slider-wrap">
+      <div class="slider-track" id="slider-track">
+        <div class="slider-ph">Loading latest articles…</div>
+      </div>
+      <button class="sarrow" id="sarr-prev">←</button>
+      <button class="sarrow" id="sarr-next">→</button>
+    </div>
+    <div class="slider-dots" id="slider-dots"></div>
+  </div>
+</section>
+
+
+<!-- NEWS FEED -->
+<section id="news-feed">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-label">Latest Scholarship</span>
+      <div class="sec-rule"><h2 class="sec-title">News Feed — All Articles</h2></div>
+      <span class="sec-bar"></span>
+      <p class="sec-intro">All published articles — click any headline to read the full article.</p>
+    </div>
+    <div class="nf-grid">
+      <div id="nf-main"><div class="nf-loading">Loading posts…</div></div>
+      <aside class="sidebar">
+        <div class="widget">
+          <div class="widget-title">Most Recent</div>
+          <div id="sidebar-recent"><div style="color:var(--txt3);font-family:var(--ff-ui);font-size:.8rem">Loading…</div></div>
+        </div>
+        <div class="widget">
+          <div class="widget-title">Browse by Topic</div>
+          <div class="tag-cloud">
+            <span class="tag">Bangladesh</span><span class="tag">Liberation</span>
+            <span class="tag">1971</span><span class="tag">Russia</span>
+            <span class="tag">Cold War</span><span class="tag">Europe</span>
+            <span class="tag">Revolution</span><span class="tag">Asia</span>
+            <span class="tag">Colonialism</span><span class="tag">War</span>
+            <span class="tag">Independence</span><span class="tag">Nationalism</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+<!-- BANGLADESH -->
+<section id="bangladesh-history">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-label">South Asia</span>
+      <div class="sec-rule"><h2 class="sec-title">Bangladesh History</h2></div>
+      <span class="sec-bar"></span>
+      <p class="sec-intro">From Partition to Liberation — tracing the tumultuous decades that forged a nation.</p>
+    </div>
+    <div class="cards-grid" id="cards-bangladesh">
+      <div class="cards-loading">Loading…</div>
+    </div>
+    <div class="view-all"><a href="#news-feed" class="btn btn-outline">View All Bangladesh Articles →</a></div>
+  </div>
+</section>
+
+
+<!-- ASIA -->
+<section id="asia-history">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-label">Continental History</span>
+      <div class="sec-rule"><h2 class="sec-title">Asia History</h2></div>
+      <span class="sec-bar"></span>
+      <p class="sec-intro">Great empires, colonial transformations, and independence movements across the continent.</p>
+    </div>
+    <div class="cards-grid" id="cards-asia">
+      <div class="cards-loading">Loading…</div>
+    </div>
+    <div class="view-all"><a href="#news-feed" class="btn btn-outline">View All Asia Articles →</a></div>
+  </div>
+</section>
+
+
+<!-- EUROPE -->
+<section id="europe-history">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-label">Western History</span>
+      <div class="sec-rule"><h2 class="sec-title">Europe History</h2></div>
+      <span class="sec-bar"></span>
+      <p class="sec-intro">Revolutions, wars, and ideologies — Europe's turbulent modern history.</p>
+    </div>
+    <div class="cards-grid" id="cards-europe">
+      <div class="cards-loading">Loading…</div>
+    </div>
+    <div class="view-all"><a href="#news-feed" class="btn btn-outline">View All Europe Articles →</a></div>
+  </div>
+</section>
+
+
+<!-- RUSSIA -->
+<section id="russia-history">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-label">Eastern Europe &amp; Eurasia</span>
+      <div class="sec-rule"><h2 class="sec-title">Russia &amp; Soviet History</h2></div>
+      <span class="sec-bar"></span>
+      <p class="sec-intro">From Tsarist autocracy to Soviet collapse — legacies that endure today.</p>
+    </div>
+    <div class="cards-grid" id="cards-russia">
+      <div class="cards-loading">Loading…</div>
+    </div>
+    <div class="view-all"><a href="#news-feed" class="btn btn-outline">View All Russia Articles →</a></div>
+  </div>
+</section>
+
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-label">Scholarship &amp; Sources</span>
+      <div class="sec-rule"><h2 class="sec-title">Research &amp; Archives</h2></div>
+      <span class="sec-bar"></span>
+    </div>
+    <div class="res-grid">
+      <div>
+        <div class="res-col-hd"><div class="res-col-icon">📄</div><h3 class="res-col-title">Document Analysis</h3></div>
+        <div class="doc-card"><div class="doc-hd"><div class="doc-badge">PDF</div><div><div class="doc-title">Government Letter on Language Policy — East Pakistan</div><div class="doc-date">📅 26 January 1952 · National Archives of Bangladesh</div></div></div><p class="doc-text">This classified government communiqué outlines the official policy of imposing Urdu as the sole state language, revealing administrative indifference to Bengali cultural identity prior to the Ekushey protests.</p></div>
+        <div class="doc-card"><div class="doc-hd"><div class="doc-badge">DOC</div><div><div class="doc-title">Field Report: Agartala Conspiracy Case Proceedings</div><div class="doc-date">📅 1968 · Intelligence Bureau, Pakistan</div></div></div><p class="doc-text">Declassified intelligence reports show the Pakistani government's strategy to discredit Sheikh Mujibur Rahman. Cross-referencing these records exposes significant contradictions in the prosecution's narrative.</p></div>
+        <div class="doc-card"><div class="doc-hd"><div class="doc-badge">IMG</div><div><div class="doc-title">Proclamation of Independence — Bangladesh, 1971</div><div class="doc-date">📅 10 April 1971 · Mujibnagar Government</div></div></div><p class="doc-text">The formal Proclamation established the legal framework for the liberation struggle and appealed for international recognition of the new state of Bangladesh.</p></div>
+      </div>
+      <div>
+        <div class="res-col-hd"><div class="res-col-icon">🎙</div><h3 class="res-col-title">Oral History Project</h3></div>
+        <div class="quote-card"><p class="quote-text">"We were students, barely twenty years old. When we heard they had fired on Barkat, something broke open inside us. Fear turned into something else — something that couldn't be contained anymore."</p><div class="quote-by"><div class="quote-ico">👤</div><div><div class="quote-name">Rabeya Khatun, 1997</div><div class="quote-role">Women of the Language Movement — Field Interview</div></div></div></div>
+        <div class="quote-card"><p class="quote-text">"My mother would not let us speak Urdu at home, not one word. She said: 'They can take our rice, they can take our jute — but they cannot take the tongue that God gave us.'"</p><div class="quote-by"><div class="quote-ico">👤</div><div><div class="quote-name">Halima Begum, 2001</div><div class="quote-role">Women of the Language Movement — Dhaka Survey</div></div></div></div>
+        <div class="quote-card"><p class="quote-text">"In March of '71 the soldiers came at dawn. The women hid the young men in the rice silos. Three survived because of that. History does not always record what women did to keep it alive."</p><div class="quote-by"><div class="quote-ico">👤</div><div><div class="quote-name">Sufia Akhtar, 2003</div><div class="quote-role">Liberation War Oral Histories — Rajshahi Division</div></div></div></div>
+      </div>
+    </div>
+    <div class="archive-note"><strong>🔒 Source Note:</strong> All documentary content is sourced from the <strong>National Archives of Bangladesh</strong>, the Bangladesh Liberation War Museum, and primary field interviews.</div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="sec-label">About the Author</span>
+        <h2 class="sec-title" style="text-align:left;margin-bottom:8px">MD. Solyman Hossain</h2>
+        <span class="sec-bar" style="margin:0 0 18px"></span>
+        <div class="abt-photo-wrap">
+          <div class="abt-av" onclick="document.getElementById('abt-photo-input').click()">
+            <div class="abt-av-ph" id="abt-av-ph">👤</div>
+            <img id="abt-av-img" src="" alt="Author Photo" style="display:none">
+            <div class="abt-av-ov"><span>📷</span>Upload Photo</div>
+          </div>
+          <div class="upload-hint">Click photo to upload</div>
+          <input type="file" id="abt-photo-input" accept="image/*">
+        </div>
+        <p>History Archive is an independent academic project dedicated to the preservation, analysis, and dissemination of historical knowledge — with a particular focus on the history of Bangladesh and South Asia from 1947 to 1971.</p>
+        <p>This portal was created as a scholarly resource for students, educators, and researchers. It brings together primary source documents, annotated research articles, and oral history testimonies.</p>
+        <div class="about-feat">
+          <div class="about-feat-item"><div class="about-dot"></div><div class="about-feat-txt">Affiliated with the Department of History, Jahangirnagar University</div></div>
+          <div class="about-feat-item"><div class="about-dot"></div><div class="about-feat-txt">Primary source documents from the National Archives of Bangladesh</div></div>
+          <div class="about-feat-item"><div class="about-dot"></div><div class="about-feat-txt">Oral history narratives collected through field interviews across Bangladesh</div></div>
+        </div>
+        <a href="#research" class="btn btn-gold">Explore the Archive →</a>
+      </div>
+      <div>
+        <div class="info-card"><h4>📚 Academic Scope</h4><p>Coverage spans Bangladesh history, South Asian history, European modern history, and Russian & Central Asian history — with depth across the 19th–20th centuries.</p></div>
+        <div class="info-card"><h4>🎙 Oral Histories</h4><p>Over 32 oral history testimonies — many from women participants — documenting first-hand accounts of the Language Movement and Liberation War of 1971.</p></div>
+        <div class="info-card"><h4>📄 Primary Sources</h4><p>Declassified government documents, intelligence reports, and official proclamations from the National Archives provide the evidentiary foundation for all research articles.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>History Archive</h4>
+        <p>A Digital Record of the Past — preserving primary sources, oral histories, and scholarly research on Bangladesh and world history.</p>
+        <div class="socials">
+          <a href="#" class="social-a">fb</a>
+          <a href="#" class="social-a">tw</a>
+          <a href="#" class="social-a">yt</a>
+          <a href="#" class="social-a">ac</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#bangladesh-history">Bangladesh</a></li>
+          <li><a href="#asia-history">Asia</a></li>
+          <li><a href="#europe-history">Europe</a></li>
+          <li><a href="#russia-history">Russia</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#">Bangladesh</a></li>
+          <li><a href="#">Asia</a></li>
+          <li><a href="#">Europe</a></li>
+          <li><a href="#">Russia</a></li>
+          <li><a href="#">Primary Sources</a></li>
+          <li><a href="#">Oral Histories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p>✉ <a href="mailto:editor@historyarchive.ac">editor@historyarchive.ac</a></p>
+        <p>🏛 Department of History<br>Jahangirnagar University<br>Savar, Dhaka — Bangladesh</p>
+      </div>
+    </div>
+    <div class="footer-btm">© <span id="yr">2026</span> History Archive | MD. Solyman Hossain | <a href="#">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Back to top">↑</button>
+<div class="toast" id="toast"></div>
+
+
+<!-- ARTICLE MODAL -->
+<div id="modal">
+  <div class="modal-paper">
+    <div class="modal-hdr">
+      <span class="modal-hdr-lbl">History Archive — Full Article</span>
+      <button class="modal-close" id="modal-close">×</button>
+    </div>
+    <div class="paper-mast">
+      <div class="paper-mast-date" id="m-date-display"></div>
+      <div class="paper-mast-name">History <span style="color:var(--gold);font-style:italic">Archive</span></div>
+      <div class="paper-mast-tag">MD. Solyman Hossain — A Digital Record of the Past</div>
+    </div>
+    <hr class="paper-rule">
+    <div class="paper-head">
+      <span class="paper-cat-badge" id="m-cat"></span>
+      <h1 class="paper-title" id="m-title"></h1>
+      <div class="paper-byline">
+        <span id="m-author"></span>
+        <span id="m-date"></span>
+        <span id="m-read"></span>
+      </div>
+    </div>
+    <div class="paper-img" id="m-img-wrap" style="display:none"><img id="m-img" src="" alt=""></div>
+    <div class="paper-body" id="m-body"></div>
+    <div class="paper-foot">
+      <div class="paper-tags" id="m-tags"></div>
+      <button class="paper-back-btn" id="modal-close-2">← Back to Archive</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+// ── CONFIG ────────────────────────────────────────────────────
+const BLOG = 'https://historiaarchive.blogspot.com';
+const PER_PAGE = 6;
+let nfStart = 1;  // news feed pagination startIndex
+let nfHistory = [1];
+let sliderCur = 0;
+let sliderTotal = 0;
+
+// ── JSONP LOADER — no fetch(), no CORS ───────────────────────
+function jsonp(url) {
+  return new Promise((resolve, reject) => {
+    const cb = '__bc' + Date.now() + Math.random().toString(36).slice(2);
+    const s = document.createElement('script');
+    window[cb] = function(data) {
+      try { delete window[cb]; } catch(e) {}
+      s.remove();
+      resolve(data);
+    };
+    s.onerror = function() {
+      try { delete window[cb]; } catch(e) {}
+      s.remove();
+      reject(new Error('JSONP failed: ' + url));
+    };
+    s.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + cb;
+    document.head.appendChild(s);
+  });
+}
+
+// ── BLOGGER FEED URL ─────────────────────────────────────────
+function feedUrl({ label = '', max = 10, start = 1 } = {}) {
+  let u = BLOG + '/feeds/posts/default?alt=json-in-script&max-results=' + max + '&start-index=' + start;
+  if (label) u += '&category=' + encodeURIComponent(label);
+  return u;
+}
+
+// ── FETCH POSTS ───────────────────────────────────────────────
+async function getPosts({ label = '', max = 10, start = 1 } = {}) {
+  try {
+    const data = await jsonp(feedUrl({ label, max, start }));
+    return (data && data.feed && data.feed.entry) ? data.feed.entry : [];
+  } catch(e) {
+    console.warn('Feed error:', e.message);
+    return [];
+  }
+}
+
+// ── PARSE POST ────────────────────────────────────────────────
+function parse(entry) {
+  const title = (entry.title && entry.title.$t) || 'Untitled';
+  const raw   = (entry.content && entry.content.$t) || (entry.summary && entry.summary.$t) || '';
+  const pub   = (entry.published && entry.published.$t) || '';
+  const dateStr = pub ? new Date(pub).toLocaleDateString('en-GB',{year:'numeric',month:'long',day:'numeric'}) : '';
+  const cat   = (entry.category && entry.category[0] && entry.category[0].term) || 'History';
+  const tags  = (entry.category || []).map(c => c.term);
+
+  // Link
+  let link = '#';
+  const links = entry.link || [];
+  const alt = links.find(l => l.rel === 'alternate');
+  if (alt) link = alt.href;
+
+  // Thumbnail: try media$thumbnail first, then extract from content
+  let thumb = '';
+  if (entry.media$thumbnail && entry.media$thumbnail.url) {
+    thumb = entry.media$thumbnail.url;
+    // Upgrade small thumbnails to larger size
+    thumb = thumb.replace(/\/s[0-9]+-c\//g, '/s600/').replace(/\/s[0-9]+\//g, '/s600/');
+  }
+  if (!thumb) {
+    const m = raw.match(/<img[^>]+src=["']([^"']+)["']/i);
+    if (m) thumb = m[1];
+  }
+
+  // Strip HTML for excerpt
+  const div = document.createElement('div');
+  div.innerHTML = raw;
+  const text = (div.textContent || div.innerText || '').replace(/\s+/g,' ').trim();
+  const excerpt = text.length > 220 ? text.slice(0, 220) + '…' : text;
+
+  const words = text.split(/\s+/).length;
+  const readtime = Math.max(1, Math.round(words / 200)) + ' min read';
+
+  return { title, raw, excerpt, dateStr, cat, tags, link, thumb, readtime };
+}
+
+// ── IMAGE HTML ────────────────────────────────────────────────
+function imgHtml(src, alt, cls, style) {
+  if (src) return `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" class="${cls}" style="${style}">`;
+  return `<div class="${cls}-ph" style="${style}">📄</div>`;
+}
+
+function esc(s) { return String(s).replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+
+// ── SLIDER ────────────────────────────────────────────────────
+async function initSlider() {
+  const track = document.getElementById('slider-track');
+  const dots  = document.getElementById('slider-dots');
+  const entries = await getPosts({ max: 5, start: 1 });
+
+  if (!entries.length) {
+    track.innerHTML = `<div class="slider-ph">No posts yet. Publish your first article on Blogger.</div>`;
+    return;
+  }
+
+  const posts = entries.map(parse);
+  sliderTotal = posts.length;
+  sliderCur = 0;
+
+  track.innerHTML = posts.map(p => {
+    const imgBlock = p.thumb
+      ? `<img src="${esc(p.thumb)}" alt="${esc(p.title)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:.75">`
+      : `<div class="slide-img-ph">📰</div>`;
+    return `
+    <div class="slide">
+      <div class="slide-img">
+        ${imgBlock}
+        <span class="slide-badge">${esc(p.cat)}</span>
+      </div>
+      <div class="slide-body">
+        <div>
+          <div class="slide-meta">📅 ${esc(p.dateStr)} · 📄 ${esc(p.readtime)}</div>
+          <h2 class="slide-title">${esc(p.title)}</h2>
+          <p class="slide-excerpt">${esc(p.excerpt)}</p>
+        </div>
+        <div class="slide-footer">
+          <a href="${esc(p.link)}" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Continue Reading →</a>
+          <span class="slide-author">By MD. Solyman Hossain</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  dots.innerHTML = posts.map((_,i) =>
+    `<button class="sdot${i===0?' on':''}" data-i="${i}"></button>`
+  ).join('');
+
+  dots.querySelectorAll('.sdot').forEach(d =>
+    d.addEventListener('click', () => slideTo(+d.dataset.i))
+  );
+
+  goSlide(0);
+  clearInterval(window._st);
+  window._st = setInterval(() => goSlide(sliderCur + 1), 6000);
+}
+
+function goSlide(n) {
+  sliderCur = ((n % sliderTotal) + sliderTotal) % sliderTotal;
+  const track = document.getElementById('slider-track');
+  const dots  = document.getElementById('slider-dots');
+  if (track) track.style.transform = `translateX(-${sliderCur * 100}%)`;
+  if (dots) dots.querySelectorAll('.sdot').forEach((d,i) => d.classList.toggle('on', i === sliderCur));
+}
+
+function slideTo(n) { goSlide(n); }
+
+document.getElementById('sarr-prev').addEventListener('click', () => goSlide(sliderCur - 1));
+document.getElementById('sarr-next').addEventListener('click', () => goSlide(sliderCur + 1));
+
+// ── CARD ──────────────────────────────────────────────────────
+function makeCard(p) {
+  const imgBlock = p.thumb
+    ? `<img src="${esc(p.thumb)}" alt="${esc(p.title)}" loading="lazy" style="width:100%;height:180px;object-fit:cover;opacity:.78;transition:transform .4s,opacity .3s">`
+    : `<div class="card-img-ph">📰</div>`;
+  return `
+  <article class="card">
+    <div class="card-img">
+      ${imgBlock}
+      <span class="card-cat">${esc(p.cat)}</span>
+    </div>
+    <div class="card-body">
+      <div class="card-meta"><span>📅 ${esc(p.dateStr)}</span><span>📄 ${esc(p.readtime)}</span></div>
+      <h3 class="card-title">${esc(p.title)}</h3>
+      <p class="card-desc">${esc(p.excerpt)}</p>
+      <a href="${esc(p.link)}" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Continue Reading →</a>
+    </div>
+  </article>`;
+}
+
+// ── CATEGORY SECTIONS ─────────────────────────────────────────
+async function loadSection(label, containerId) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const entries = await getPosts({ label, max: 3, start: 1 });
+  if (!entries.length) {
+    el.innerHTML = `<p class="cards-loading">No "${label}" posts yet. Publish a Blogger post with label <strong>${label}</strong> and it will appear here automatically.</p>`;
+    return;
+  }
+  el.innerHTML = entries.map(e => makeCard(parse(e))).join('');
+}
+
+// ── NEWS FEED ─────────────────────────────────────────────────
+async function loadFeed(dir = 'init') {
+  const el = document.getElementById('nf-main');
+  if (!el) return;
+  el.innerHTML = `<div class="nf-loading">Loading posts…</div>`;
+
+  if (dir === 'next') { nfStart += PER_PAGE; nfHistory.push(nfStart); }
+  else if (dir === 'prev') { nfHistory.pop(); nfStart = nfHistory[nfHistory.length - 1] || 1; }
+  else { nfStart = 1; nfHistory = [1]; }
+
+  // Fetch one extra to detect if there are more pages
+  const entries = await getPosts({ max: PER_PAGE + 1, start: nfStart });
+
+  if (!entries.length) {
+    el.innerHTML = `<div class="nf-loading">No posts found. Publish your first article on Blogger!</div>`;
+    return;
+  }
+
+  const hasMore = entries.length > PER_PAGE;
+  const posts = entries.slice(0, PER_PAGE).map(parse);
+  const lead = posts[0];
+  const rest = posts.slice(1);
+
+  // Lead image
+  const leadImgBlock = lead.thumb
+    ? `<img src="${esc(lead.thumb)}" alt="${esc(lead.title)}" loading="lazy" style="width:100%;height:240px;object-fit:cover;opacity:.85">`
+    : `<div class="nf-lead-img-ph">📰</div>`;
+
+  // Compact items
+  const compactHTML = rest.map(p => {
+    const tBlock = p.thumb
+      ? `<img src="${esc(p.thumb)}" alt="${esc(p.title)}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`
+      : `<div class="nf-thumb-ph">📄</div>`;
+    return `
+    <a href="${esc(p.link)}" target="_blank" rel="noopener" class="nf-item">
+      <div class="nf-thumb">${tBlock}</div>
+      <div>
+        <div class="nf-item-cat">${esc(p.cat)}</div>
+        <div class="nf-item-title">${esc(p.title)}</div>
+        <div class="nf-item-date">📅 ${esc(p.dateStr)} · 📄 ${esc(p.readtime)}</div>
+      </div>
+    </a>`;
+  }).join('');
+
+  // Pagination
+  const prevBtn = nfHistory.length > 1
+    ? `<button class="btn btn-outline btn-sm" onclick="loadFeed('prev')">← Newer Posts</button>`
+    : '';
+  const nextBtn = hasMore
+    ? `<button class="btn btn-outline btn-sm" onclick="loadFeed('next')">Older Posts →</button>`
+    : '';
+
+  el.innerHTML = `
+  <div class="nf-lead">
+    <div class="nf-lead-img">${leadImgBlock}</div>
+    <div>
+      <div class="nf-cat">${esc(lead.cat)}</div>
+      <h3 class="nf-lead-title">${esc(lead.title)}</h3>
+      <p class="nf-excerpt">${esc(lead.excerpt)}</p>
+      <div class="nf-byline">By MD. Solyman Hossain · 📅 ${esc(lead.dateStr)}</div>
+      <a href="${esc(lead.link)}" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" style="margin-top:14px;display:inline-flex">Continue Reading →</a>
+    </div>
+  </div>
+  ${compactHTML}
+  <div class="nf-pagination">${prevBtn}${nextBtn}</div>`;
+}
+
+// ── SIDEBAR ───────────────────────────────────────────────────
+async function loadSidebar() {
+  const el = document.getElementById('sidebar-recent');
+  if (!el) return;
+  const entries = await getPosts({ max: 5, start: 1 });
+  if (!entries.length) { el.innerHTML = `<div style="color:var(--txt3);font-family:var(--ff-ui);font-size:.8rem">No posts yet.</div>`; return; }
+  el.innerHTML = entries.map(e => {
+    const p = parse(e);
+    return `<a href="${esc(p.link)}" target="_blank" rel="noopener" class="w-item">
+      <div class="w-cat">${esc(p.cat)}</div>
+      <div class="w-title">${esc(p.title)}</div>
+      <div class="w-date">📅 ${esc(p.dateStr)}</div>
+    </a>`;
+  }).join('');
+}
+
+// ── PHOTO UPLOAD — localStorage persist, সব জায়গায় sync ──────
+function applyPhoto(src) {
+  // Hero author card
+  const avImg = document.getElementById('av-img');
+  const avPh  = document.getElementById('av-ph');
+  if (avImg) { avImg.src = src; avImg.style.display = 'block'; }
+  if (avPh)  avPh.style.display = 'none';
+  // About section
+  const abtImg = document.getElementById('abt-av-img');
+  const abtPh  = document.getElementById('abt-av-ph');
+  if (abtImg) { abtImg.src = src; abtImg.style.display = 'block'; }
+  if (abtPh)  abtPh.style.display = 'none';
+}
+
+function loadSavedPhoto() {
+  try { const s = localStorage.getItem('ha_photo'); if (s) applyPhoto(s); } catch(e) {}
+}
+
+function onPhotoFile(file) {
+  if (!file) return;
+  const r = new FileReader();
+  r.onload = e => {
+    applyPhoto(e.target.result);
+    try { localStorage.setItem('ha_photo', e.target.result); } catch(e2) {}
+    toast('✦ Profile photo saved');
+  };
+  r.readAsDataURL(file);
+}
+
+document.getElementById('av-input').addEventListener('change', e => onPhotoFile(e.target.files[0]));
+document.getElementById('abt-photo-input').addEventListener('change', e => onPhotoFile(e.target.files[0]));
+
+// ── TOAST ─────────────────────────────────────────────────────
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ── MODAL ─────────────────────────────────────────────────────
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-close-2').addEventListener('click', closeModal);
+document.getElementById('modal').addEventListener('click', e => { if (e.target === document.getElementById('modal')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── MOBILE NAV ────────────────────────────────────────────────
+const mobToggle = document.getElementById('mob-toggle');
+const mobNav    = document.getElementById('mob-nav');
+mobToggle.addEventListener('click', () => {
+  const o = mobNav.classList.toggle('open');
+  mobToggle.classList.toggle('open', o);
+});
+mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobNav.classList.remove('open');
+  mobToggle.classList.remove('open');
+}));
+
+// ── DROPDOWN NAV ──────────────────────────────────────────────
+document.querySelectorAll('.has-dd').forEach(li => {
+  const btn = li.querySelector('.nav-btn');
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    li.classList.toggle('open');
+    document.querySelectorAll('.has-dd').forEach(x => { if (x !== li) x.classList.remove('open'); });
+  });
+});
+document.addEventListener('click', () => document.querySelectorAll('.has-dd').forEach(x => x.classList.remove('open')));
+
+// ── BACK TO TOP ───────────────────────────────────────────────
+const btt = document.getElementById('btt');
+window.addEventListener('scroll', () => btt.classList.toggle('on', scrollY > 400), {passive:true});
+btt.addEventListener('click', () => scrollTo({top:0,behavior:'smooth'}));
+
+// ── DARK / LIGHT MODE — shared function ──────────────────────
+let dark = true;
+function applyTheme(isDark) {
+  const r = document.documentElement.style;
+  if (!isDark) {
+    r.setProperty('--bg0','#f5f0e8'); r.setProperty('--bg1','#ede6d5');
+    r.setProperty('--bg2','#e8dfc8'); r.setProperty('--bg3','#ddd4bc');
+    r.setProperty('--bdr','#c9bfa0'); r.setProperty('--txt','#1a1508');
+    r.setProperty('--txt2','#4a3e22'); r.setProperty('--txt3','#7a6a45');
+    r.setProperty('--cream','#1a1508'); r.setProperty('--cream2','#3a2e15');
+    document.getElementById('theme-btn').textContent = '☀ Light';
+    const mb = document.getElementById('mob-theme-btn');
+    if (mb) mb.textContent = '🌙 Switch to Dark Mode';
+  } else {
+    ['--bg0','--bg1','--bg2','--bg3','--bdr','--txt','--txt2','--txt3','--cream','--cream2'].forEach(v => r.removeProperty(v));
+    document.getElementById('theme-btn').textContent = '◑ Dark';
+    const mb = document.getElementById('mob-theme-btn');
+    if (mb) mb.textContent = '☀ Switch to Light Mode';
+  }
+  try { localStorage.setItem('ha_theme', isDark ? 'dark' : 'light'); } catch(e) {}
+}
+
+document.getElementById('theme-btn').addEventListener('click', () => {
+  dark = !dark; applyTheme(dark);
+});
+
+function mobToggleTheme(e) {
+  e.preventDefault();
+  dark = !dark; applyTheme(dark);
+}
+
+// Load saved theme
+try {
+  const saved = localStorage.getItem('ha_theme');
+  if (saved === 'light') { dark = false; applyTheme(false); }
+} catch(e) {}
+
+// ── ACTIVE NAV ────────────────────────────────────────────────
+const secEls  = document.querySelectorAll('section[id]');
+const navAs   = document.querySelectorAll('nav .nav-a');
+const navObs  = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      const id = en.target.id;
+      navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+id));
+    }
+  });
+}, {rootMargin:'-60px 0px -60% 0px'});
+secEls.forEach(s => navObs.observe(s));
+
+// ── FOOTER YEAR ───────────────────────────────────────────────
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// ── INIT ──────────────────────────────────────────────────────
+loadSavedPhoto();
+
+// Load all Blogger content
+(async () => {
+  await initSlider();
+  await loadFeed('init');
+  loadSidebar();
+  loadSection('Bangladesh', 'cards-bangladesh');
+  loadSection('Asia',       'cards-asia');
+  loadSection('Europe',     'cards-europe');
+  loadSection('Russia',     'cards-russia');
+})();
+</script>
+</body>
+</html>
